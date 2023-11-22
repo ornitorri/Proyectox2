@@ -257,3 +257,9 @@ html {
   #icon {
     width:60%;
   }
+
+  img {
+    max-width: 30%; 
+    margin-bottom: 10px;
+    
+}

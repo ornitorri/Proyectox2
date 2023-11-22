@@ -15,17 +15,14 @@ if(isset($_POST['datos'])) {
 
     $insertarDatos = "INSERT INTO registro VALUES('$nom','$ape','$cc','$telp','$nomn','$nit','$teln','$ubi','$user', '$pass')";
     
-    $ejecutarInsertar  = mysqli_query($enlace, $insertarDatos);
+    $ejecutarInsertar  = mysqli_query($conn, $insertarDatos);
    
     if ($ejecutarInsertar) {
         // Datos insertados correctamente, muestra una alerta y redirige a la página de inicio de sesión
         echo "<script>alert('Usuario registrado correctamente');</script>";
         echo "<script>window.location.href = 'login.html';</script>";
     } else {
-        echo "Hubo un error en la consulta: " . mysqli_error($enlace);
+        echo "Hubo un error en la consulta: " . mysqli_error($conn);
     }
-}
-?>
-
 }
 ?>

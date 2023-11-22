@@ -9,7 +9,7 @@ if(isset($_POST['registro'])) {
     $insertarDatos = "SELECT * FROM registro WHERE user='$user' AND Pass='$pass'";
     
     // Ejecuta la consulta
-    $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
+    $ejecutarInsertar = mysqli_query($conn, $insertarDatos);
 
     // Verifica si se encontraron resultados
     if ($ejecutarInsertar) {
@@ -17,11 +17,12 @@ if(isset($_POST['registro'])) {
 
         if ($filas > 0) {
             echo "Inicio de sesión exitoso";
+            echo "<script>window.location.href = 'index.html';</script>";
         } else {
             echo "Credenciales incorrectas";
         }
     } else {
-        echo "Hubo algún error en la consulta: " . mysqli_error($enlace);
+        echo "Hubo algún error en la consulta: " . mysqli_error($conn);
     }
 }
 ?>

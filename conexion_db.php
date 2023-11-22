@@ -1,9 +1,12 @@
 <?php
-$servidor = "localhost";
-$usuario = "root";
-$clave = "";
-$baseDeDatos = "tienda"; 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "tienda"; 
 
+$conn = mysqli_connect($servername, $username, $password, $database);
 
-$enlace = mysqli_connect($servidor, $usuario, $clave, $baseDeDatos);
+if (!$conn) {
+    die("La conexión ha fallado: " . mysqli_connect_error());
+}
 ?>
